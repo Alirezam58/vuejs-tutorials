@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.4.6.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2 class="text-center m-3">Courses</h2>
+                <hr>
+                <p>{{course}}</p>
+                <p>{{author}}</p>
+                <p>{{desc}}</p>
+                <p>{{like}}</p>
+                <hr>
+                <p> Course : <input v-model="course"></p>
+                <p> Author : <input v-model="author"></p>
+                <p> Dscc   : <input v-model="desc"></p>
+                <p> Like   : <button class="btn btn-success px-5" @click="like ++">+</button>
+                    <button class="btn btn-danger px-5" @click="like --">-</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <script src="vuejs.3.0.7.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    course : "Javascript",
+                    author : "Mojtabaei",
+                    desc : "Javascript is Cool",
+                    like : 101
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
