@@ -22,8 +22,9 @@
                 <p> Course : <input v-model="course"></p>
                 <p> Author : <input v-model="author"></p>
                 <p> Dscc   : <input v-model="desc"></p>
-                <p> Like   : <button class="btn btn-success px-5" @click="like ++">+</button>
-                    <button class="btn btn-danger px-5" @click="like --">-</button>
+                <p> Like   : <button class="btn btn-success px-5 mr-2" @click="like ++">+</button>
+                    <button class="btn btn-danger px-5 mr-2" @click="like --">-</button>
+                    <button class="btn btn-warning" @click = "clearCourse('Cleared')">Clear</button>
                 </p>
             </div>
         </div>
@@ -41,6 +42,15 @@
                     author : "Mojtabaei",
                     desc : "Javascript is Cool",
                     like : 101
+                }
+            },
+            methods:{
+                clearCourse(msg){
+                    this.course = '';
+                    this.author = '';
+                    this.desc = '';
+                    this.like = '';
+                    alert(msg);
                 }
             }
         }).mount('#app');
